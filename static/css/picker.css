@@ -1,0 +1,87 @@
+/* picker.css */
+
+/* Reset default styles */
+html, body, h1, form, button {
+	margin: 0;
+	padding: 0;
+}
+
+/* Set font and background color */
+body.option-box {
+	font-family: Arial, sans-serif;
+	background-color: #f2f2f2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 40vh;
+}
+
+/* Center the heading */
+h1.option-box-header {
+	text-align: center;
+	margin-top: 0px;
+}
+
+/* Style the buttons */
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+button.option-box-button:hover {
+	background-color: #0056b3;
+	transform: scale(1.1);
+	transition: transform .5s;
+}
+
+button.option-box-button:not(:hover) {
+	transform: scale(1);
+	transition: transform .5s;
+}
+
+button.option-box-button:focus {
+	outline: none;
+}
+
+.option-box {
+	border: 1px solid black;
+	border-radius: 20px;
+	padding: 20px;
+	width: 500px;
+	height: 50%; /* Updated height value */
+	margin: auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex; /* Added */
+	flex-direction: column; /* Added */
+	justify-content: center; /* Added */
+	align-items: center; /* Added */
+}
+
+.option-box .button-form{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.option-box .button-form .buttonlist{
+	width: 100%;
+	list-style-type: none;
+}
+
+.option-box .button-form .buttonlist .option-box-button{
+	width: 400%;
+	height: 40px;
+	margin: 10px 0;
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	font-size: 16px;
+	cursor: pointer;
+	list-style-type: none;
+	margin-left: -20px;
+}

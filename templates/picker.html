@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Button Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/picker.css') }}">
+</head>
+<body class="option-box">
+    <h1 class="option-box-header">{{ prompt }}</h1>
+    <form class="button-form" action="/" method="post">
+        {% for button_name in button_names %}
+        <li class="buttonlist">
+            <button class="option-box-button" type="submit" name="action" value="{{ button_name }}">{{ button_name }}</button>
+        </li>
+        {% endfor %}
+    </form>
+</body>
+</html>
