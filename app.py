@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 
-def home():
+def picker():
 	button_names = ['button1', 'button2', 'button3', 'button4', 'button5']
 
 	if request.method == 'POST':
@@ -15,7 +15,13 @@ def home():
 	else:
 		return render_template('picker.html', prompt="testprompt", button_names=button_names)
 
+@app.route('/answer', methods=['GET', 'POST'])
 
+def answer():
+	given_answer = "testanswer"
+	links = ['link1', 'link2', 'link3', 'link4', 'link5']
+
+	return render_template('answer.html', Algorithm=given_answer, links=links)
 
 
 

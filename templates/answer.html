@@ -11,14 +11,12 @@
 <div class="background">
     <img src="{{ url_for('static', filename='assets/gear.png') }}" class="spinninggear" alt="Gear">
 </div>
-<body class="option-box">
-    <h1 class="option-box-header">{{ prompt }}</h1>
-    <form class="button-form" action="/" method="post">
-        {% for button_name in button_names %}
-        <li class="buttonlist">
-            <button class="option-box-button" type="submit" name="action" value="{{ button_name }}">{{ button_name }}</button>
-        </li>
-        {% endfor %}
-    </form>
+<body class="answer-box">
+    <h1 class="option-box-header">{{ Algorithm }}</h1>
+	{% for link in links %}
+	<li class="buttonlist">
+		<p class="link-item">{{link}}</p>
+	</li>
+	{% endfor %}
 </body>
 </html>

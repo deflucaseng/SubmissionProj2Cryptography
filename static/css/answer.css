@@ -1,0 +1,71 @@
+/* picker.css */
+
+/* Reset default styles */
+html, body, h1, form, button {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set font and background color */
+body.answer-box {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
+
+/* Center the heading */
+h1.option-box-header {
+    text-align: center;
+    margin-top: 30px;
+    font-family: "Arial", sans-serif;
+}
+
+
+
+
+.answer-box {
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 20px;
+    width: 500px; /* Set to desired width */
+    height: 50%;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+.background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.5);
+    animation: spin 20s linear infinite;
+}
+
+.spinninggear{
+    width: 1500px;
+}
+
+@keyframes spin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    
+    
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
