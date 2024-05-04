@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptographic Algorithm Selector</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cryptographic Algorithm Selector</h1>
+        <form action="/submit" method="post">
+            <label for="security">Select Security Level:</label>
+            <select id="security" name="security">
+                <option value="High">High</option>
+                <option value="Moderate">Moderate</option>
+                <option value="Low">Low</option>
+            </select>
+            <label for="efficiency">Select Runtime Efficiency:</label>
+            <select id="efficiency" name="efficiency">
+                <option value="Fast">Fast</option>
+                <option value="Moderate">Moderate</option>
+                <option value="Slow">Slow</option>
+            </select>
+            <label for="ease">Select Ease of Implementation:</label>
+            <select id="ease" name="ease">
+                <option value="Low">Low</option>
+                <option value="Moderate">Moderate</option>
+                <option value="High">High</option>
+            </select>
+            <label for="usecase">Select Use Case:</label>
+            <select id="usecase" name="usecase">
+                <option value="Military Communications, Online Banking, Secure Communications">Military Communications, Online Banking, Secure Communications</option>
+                <option value="Personal Projects">Personal Projects</option>
+                <option value="Financial Institutions, Secure Communications">Financial Institutions, Secure Communications</option>
+                <option value="Secure Communications, Software Development">Secure Communications, Software Development</option>
+                <option value="Network Protocols, Password Hashing, File Encryption, Disk Encryption, Email Encryption, Secure Shell">Network Protocols, Password Hashing, File Encryption, Disk Encryption, Email Encryption, Secure Shell</option>
+                <option value="Secure Communications, Sensitive Data Encryption, File and Folder Encryption, Cloud Storage">Secure Communications, Sensitive Data Encryption, File and Folder Encryption, Cloud Storage</option>
+            </select>
+            <label for="flexibility">Select Flexibility:</label>
+            <select id="flexibility" name="flexibility">
+                <option value="Low">Low</option>
+                <option value="Moderate">Moderate</option>
+                <option value="High">High</option>
+            </select>
+            <label for="scalibility">Select Scalibility:</label>
+            <select id="scalibility" name="scalibility">
+                <option value="Low">Low</option>
+                <option value="Moderate">Moderate</option>
+                <option value="High">High</option>
+            </select>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
