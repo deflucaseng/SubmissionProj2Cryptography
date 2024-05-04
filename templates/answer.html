@@ -6,17 +6,11 @@
     <meta charset="UTF-8">
     <title>Button Example</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/picker.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/answer.css') }}">
 </head>
-<div class="background">
-    <img src="{{ url_for('static', filename='assets/gear.png') }}" class="spinninggear" alt="Gear">
-</div>
+
 <body class="answer-box">
     <h1 class="option-box-header">{{ Algorithm }}</h1>
-	{% for link in links %}
-	<li class="buttonlist">
-		<p class="link-item">{{link}}</p>
-	</li>
-	{% endfor %}
+</body>
 </body>
 </html>

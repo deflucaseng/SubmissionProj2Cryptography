@@ -33,8 +33,7 @@ def submit():
     # model = joblib.load("Recommender.pkl")
     new_data_transformed = column_transformer.transform(data)
     recommended_algorithm_index = model.predict(new_data_transformed)[0]
-    return f"Recommended Algorithm: {recommended_algorithm_index}"
-    # return f"Best algorithm for {usecase} \n with {security} security,\n {efficiency} efficiency,\n {ease} ease, \n {flexibility} \nflexibility and \n {scalibility} scalibility."
+    return render_template('answer.html', Algorithm=recommended_algorithm_index)
 
 if __name__ == '__main__':
     app.run(host="127.0.0.1", port=8000 ,debug=True)
