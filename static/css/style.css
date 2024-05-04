@@ -1,143 +1,51 @@
-/* picker.css */
-
-/* Reset default styles */
-html, body, h1, form, button {
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
-}
-
-/* Set font and background color */
-body.option-box {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 10vh;
+    height: 100vh;
 }
 
-/* Center the heading */
-h1.option-box-header {
-    text-align: center;
-    margin-top: 30px;
-    font-family: "Arial", sans-serif;
-}
-
-/* Style the buttons */
-form.button-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%; /* Ensure form takes full width of its parent */
-}
-
-button.option-box-button:hover {
-    background-color: #0056b3;
-    transform: scale(1.08);
-    transition: transform .5s;
-}
-
-button.option-box-button:not(:hover) {
-    transform: scale(1);
-    transition: transform .5s;
-	border: 1px solid transparent;
-}
-
-button.option-box-button:focus {
-    outline: none;
-    transition: transform 1s;
-}
-
-.option-box {
-    border: 1px solid black;
-    border-radius: 20px;
+.container {
+    background-color: #fff;
     padding: 20px;
-    width: 500px; /* Set to desired width */
-    height: 50%;
-    margin: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #333;
+}
+
+form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
-.option-box .button-form .buttonlist {
-    width: 100%; /* Full width of form */
-    list-style-type: none;
-    padding: 0; /* Remove padding */
-    margin: 0; /* Remove margin */
+label {
+    margin-top: 10px;
 }
 
-.option-box-button {
-    background-color: transparent;
-    color: transparent;
-    transition-duration: 1s;
-    transition: background-color 1s;
-    font-family: "Helvetica", sans-serif;
-}
-
-
-.option-box:hover {
-	border: 1px solid black;
-    border-radius: 20px;
-    padding: 20px;
-    width: 500px; /* Set to desired width */
-    height: 50%;
-    margin: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-	transition-duration: .5s;
-}
-
-
-.option-box:hover .option-box-button{
-    width: 100%; /* Full width of its parent */
-    height: 40px;
-    margin: 10px 0;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
+select {
+    margin-top: 5px;
+    padding: 10px;
     border-radius: 4px;
-    font-size: 16px;
+    border: 1px solid #ccc;
+}
+
+button {
+    margin-top: 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
     cursor: pointer;
-	transition-duration: 1s;
+    border-radius: 4px;
 }
 
-.option-box:hover h1.option-box-header {
-    margin-top: -20px;
-	transition-duration : 1s;
-}
-
-
-.background {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1.5);
-    animation: spin 20s linear infinite;
-}
-
-.spinninggear{
-    width: 1500px;
-}
-
-@keyframes spin {
-    0% {
-        transform: translate(-50%, -50%) rotate(0deg);
-    
-    
-    }
-    100% {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
+button:hover {
+    background-color: #0056b3;
 }
