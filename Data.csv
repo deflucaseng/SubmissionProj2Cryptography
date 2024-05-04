@@ -1,0 +1,7 @@
+Algorithms,Security,Runtime Efficiency,Ease of Implementation,Use Cases,Flexibility,Scalability
+AES,High,Fast,Moderate,"Military Communications, Online Banking, Secure Communications",High,High
+DES,Low,Fast,Moderate,Personal Projects,Moderate,Moderate
+3DES,High,Slow,Moderate,"Financial Institutions, Secure Communications",Moderate,Moderate
+IDEA,High,Moderate,Moderate,"Secure Communications, Software Development",Moderate,Moderate
+TWOFISH,High,Fast,Moderate,"Secure Communications, Sensitive Data Encryption, File and Folder Encryption, Cloud Storage",High,High
+BLOWFISH,High,Fast,Moderate,"Network Protocols, Password Hashing, File Encryption, Disk Encryption, Email Encryption, Secure Shell",High,High
