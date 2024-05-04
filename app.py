@@ -13,7 +13,7 @@ def index():
 
 @app.route('/submit', methods=['POST'])
 def submit():
-    data = pd.DataFrame([{'Security': request.form['security'],
+    data = pd.DataFrame([{'Security': ("Low" if request.form['security'] == "Low" else "High"),
                           'Runtime Efficiency': request.form['efficiency'],
                           'Ease of Implementation': 'Moderate',
                           'Use Cases': request.form['usecase'],
