@@ -1,29 +1,40 @@
-from flask import Flask, render_template, request
+from flask import Flask, request, render_template
+import joblib
+import joblib
+from sklearn.preprocessing import OneHotEncoder
+import pandas as pd
+from sklearn.compose import ColumnTransformer
 
 app = Flask(__name__)
+model = joblib.load('./Recommender.pkl')
+@app.route('/')
+def index():
+    return render_template('index.html')
 
-
-@app.route('/', methods=['GET', 'POST'])
-
-def picker():
-	button_names = ['button1', 'button2', 'button3', 'button4', 'button5']
-
-	if request.method == 'POST':
-		# This retrieves which button was pressed
-		button_pressed = request.form['action']
-		return f"You pressed: {button_pressed}"
-	else:
-		return render_template('picker.html', prompt="testprompt", button_names=button_names)
-
-@app.route('/answer', methods=['GET', 'POST'])
-
-def answer():
-	given_answer = "testanswer"
-	links = ['link1', 'link2', 'link3', 'link4', 'link5']
-
-	return render_template('answer.html', Algorithm=given_answer, links=links)
-
-
+@app.route('/submit', methods=['POST'])
+def submit():
+    data = pd.DataFrame([{'Security': request.form['security'],
+                          'Runtime Efficiency': request.form['efficiency'],
+                          'Ease of Implementation': 'Moderate',
+                          'Use Cases': request.form['usecase'],
+                          'Flexibility': request.form['flexibility'],
+                          'Scalability': request.form['scalibility']}])
+    
+    # Implement logic here to determine the best algorithm
+    # Placeholder response
+    cols = data.columns.tolist()
+    # cols.remove('Algorithms')
+    column_transformer = ColumnTransformer(
+		[("one_hot_encoder", OneHotEncoder(), cols)],
+		remainder='passthrough'  # this leaves all other columns in their original form
+	)
+    base_data = pd.read_csv("Data.csv")
+    X = column_transformer.fit_transform(base_data.drop('Algorithms', axis=1))
+    # model = joblib.load("Recommender.pkl")
+    new_data_transformed = column_transformer.transform(data)
+    recommended_algorithm_index = model.predict(new_data_transformed)[0]
+    return f"Recommended Algorithm: {recommended_algorithm_index}"
+    # return f"Best algorithm for {usecase} \n with {security} security,\n {efficiency} efficiency,\n {ease} ease, \n {flexibility} \nflexibility and \n {scalibility} scalibility."
 
 if __name__ == '__main__':
-    app.run(host="127.0.0.1", port=8000, debug=True)
+    app.run(host="127.0.0.1", port=8000 ,debug=True)
